@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="sales" namespace="sales" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CustomerRecord" table="customer_record" lazy="true" >
+    <id name="CustRecordId" column="cust_record_id" />
+    <many-to-one name="Bill">
+      <column name="bill_id" sql-type="int(11)" not-null="false" />
+    </many-to-one>
+    <many-to-one name="Customer">
+      <column name="customer_id" sql-type="int(11)" not-null="false" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

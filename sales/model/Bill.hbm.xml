@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="sales" namespace="sales" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Bill" table="bill" lazy="true" >
+    <id name="BillId" column="bill_id" />
+    <property name="BillAmount">
+      <column name="bill_amount" sql-type="int(10) unsigned" not-null="false" />
+    </property>
+    <property name="BillDate">
+      <column name="bill_date" sql-type="timestamp" not-null="true" />
+    </property>
+    <property name="BillAmoountPaid">
+      <column name="bill_amoount_paid" sql-type="int(10) unsigned zerofill" not-null="false" />
+    </property>
+    <property name="BillType">
+      <column name="bill_type" sql-type="varchar(45)" not-null="false" />
+    </property>
+    <!--<bag name="CustomerRecord">
+      <key column="" />
+      <one-to-many class="CustomerRecord" />
+    </bag>
+    <bag name="Orderr">
+      <key column="" />
+      <one-to-many class="Orderr" />
+    </bag>-->
+  </class>
+</hibernate-mapping>
